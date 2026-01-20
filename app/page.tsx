@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -16,8 +16,15 @@ const Home = () => {
               Capture, organize and manage your jop search in one place
             </p>
             <div className="flex flex-col items-center gap-4">
-              <Button size="lg" className="h-12 px-8 text-lg font-medium">Start for free <ArrowRight className="ml-2"/></Button>
-              <p>Free forever. No credit card required</p>
+              <Link href="/singup">
+                <Button size="lg" className="h-12 px-8 text-lg font-medium">
+                  Start for free <ArrowRight className="ml-2" />
+                </Button>
+              </Link>
+
+              <p className="text-muted-foreground">
+                Free forever. No credit card required
+              </p>
             </div>
           </div>
         </section>
