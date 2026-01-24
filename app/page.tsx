@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Home = () => {
@@ -25,6 +26,28 @@ const Home = () => {
               <p className="text-muted-foreground">
                 Free forever. No credit card required
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero images section with tabs */}
+        <section className="border-t bg-white py-16">
+          <div>
+            <div>
+              {/* Tabs */}
+              <div>
+                <Button>Organize Application</Button>
+                <Button>Get Hired</Button>
+                <Button>Manage Boards</Button>
+              </div>
+              <div>
+                <Image
+                  src="/heroSection/image-1.png"
+                  alt="Organize Application"
+                  width={1200}
+                  height={800}
+                />
+              </div>
             </div>
           </div>
         </section>
