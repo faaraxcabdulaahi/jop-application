@@ -1,6 +1,7 @@
 import { Briefcase } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
@@ -13,8 +14,10 @@ const Navbar = () => {
           <Briefcase />
         </Link>
         <div>
-          <Link href="/signup">Sign Up</Link>
-          <Link href="/signin">Sign In</Link>
+          <Link href="/signin">
+            <Button>Log In</Button>
+          </Link>
+          <Link href="/signup">Start for free</Link>
         </div>
       </div>
     </nav>
