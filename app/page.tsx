@@ -16,7 +16,7 @@ const Home = () => {
               Capture, organize and manage your jop search in one place
             </p>
             <div className="flex flex-col items-center gap-4">
-              <Link href="/singup">
+              <Link href="/signup">
                 <Button size="lg" className="h-12 px-8 text-lg font-medium">
                   Start for free <ArrowRight className="ml-2" />
                 </Button>
