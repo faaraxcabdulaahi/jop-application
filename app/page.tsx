@@ -40,7 +40,7 @@ const Home = () => {
                 <Button>Get Hired</Button>
                 <Button>Manage Boards</Button>
               </div>
-              <div>
+              <div className="relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 shadow-xl">
                 <Image
                   src="/heroSection/image-1.png"
                   alt="Organize Application"
