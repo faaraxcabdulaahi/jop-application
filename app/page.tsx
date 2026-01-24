@@ -32,10 +32,10 @@ const Home = () => {
 
         {/* Hero images section with tabs */}
         <section className="border-t bg-white py-16">
-          <div>
-            <div>
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl">
               {/* Tabs */}
-              <div>
+              <div className="flex gap-2 justify-center mb-8">
                 <Button>Organize Application</Button>
                 <Button>Get Hired</Button>
                 <Button>Manage Boards</Button>
@@ -44,6 +44,18 @@ const Home = () => {
                 <Image
                   src="/heroSection/image-1.png"
                   alt="Organize Application"
+                  width={1200}
+                  height={800}
+                />
+                <Image
+                  src="/heroSection/image-2.png"
+                  alt="Get Hired"
+                  width={1200}
+                  height={800}
+                />
+                <Image
+                  src="/heroSection/image-3.png"
+                  alt="Manage Boards"
                   width={1200}
                   height={800}
                 />
