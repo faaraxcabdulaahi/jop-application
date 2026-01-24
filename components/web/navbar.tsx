@@ -12,7 +12,10 @@ const Navbar = () => {
         >
           <Briefcase />
         </Link>
-        <div></div>
+        <div>
+          <Link href="/signup">Sign Up</Link>
+          <Link href="/signin">Sign In</Link>
+        </div>
       </div>
     </nav>
   );
