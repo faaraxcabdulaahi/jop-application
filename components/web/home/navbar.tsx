@@ -14,12 +14,12 @@ const Navbar = () => {
           <Briefcase />
         </Link>
         <div className="flex items-center gap-2 text-xl font-semibold text-primary">
-          <Link href="/signin">
+          <Link href="/sign-in">
             <Button variant="ghost" className="text-gray-700 hover:text-black">
               Log In
             </Button>
           </Link>
-          <Link href="/signup">
+          <Link href="/sign-up">
             <Button className="bg-primary hover:bg-primary/90">
               Start for free
             </Button>

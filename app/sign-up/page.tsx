@@ -12,8 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
-import { signIn, signOut, signUp, useSession } from "@/lib/auth/authClient";
 import { useRouter } from "next/navigation";
+import { signUp } from "@/lib/auth/authClient";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -115,7 +115,7 @@ const SignUp = () => {
             <p className="text-center text-sm text-gray-600">
               Already have an account ?{" "}
               <Link
-                href="/signin"
+                href="/sign-in"
                 className="font-medium text-primary hover:underline"
               >
                 Sign In
