@@ -11,9 +11,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [name, setName]= useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
       <Card className="w-full max-w-md border-gray-200 shadow-lg">
