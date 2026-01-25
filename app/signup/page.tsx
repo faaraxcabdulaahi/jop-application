@@ -30,8 +30,12 @@ const SignUp = () => {
         name,
         email,
         password
-      })
+      });
       console.log(result);
+
+      if (result.error) {
+        setError(result.error.message ?? "Failed to signup")
+      }
     } catch (error) {
       console.error("Unexpected ocurred in app", error);
     } finally {
