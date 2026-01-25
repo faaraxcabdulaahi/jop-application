@@ -14,9 +14,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const SignUp = () => {
-  const [name, setName]= useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
       <Card className="w-full max-w-md border-gray-200 shadow-lg">
@@ -40,6 +40,8 @@ const SignUp = () => {
                 placeholder="John Doe"
                 required
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -50,6 +52,8 @@ const SignUp = () => {
                 placeholder="JohnDoe@example.com"
                 required
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </div>
             <div className="space-y-2">
@@ -61,6 +65,8 @@ const SignUp = () => {
                 required
                 minLength={8}
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={password}
+                onChange={(event)=>setPassword(event.target.value)}
               />
             </div>
           </CardContent>
