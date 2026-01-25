@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
 import { signIn, signOut, signUp, useSession } from "@/lib/auth/authClient";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -20,6 +21,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,12 +31,14 @@ const SignUp = () => {
       const result = await signUp.email({
         name,
         email,
-        password
+        password,
       });
       console.log(result);
 
-      if (result.error) {
-        setError(result.error.message ?? "Failed to signup")
+      if (!result.error) {
+        router.push("/dashboard");
+      } else {
+        setError(result.error.message ?? "Failed to signup");
       }
     } catch (error) {
       console.error("Unexpected ocurred in app", error);
