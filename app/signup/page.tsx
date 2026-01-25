@@ -26,6 +26,11 @@ const SignUp = () => {
     setName("");
     setLoading(true);
     try {
+      await signUp.email({
+        name,
+        email,
+        password
+      })
     } catch (error) {
       console.error("Unexpected ocurred in app", error);
     } finally {
