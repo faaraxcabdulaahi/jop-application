@@ -1,6 +1,6 @@
-import Features from "@/components/web/heroSection/features";
-import HeroSection from "@/components/web/heroSection/heroSection";
-import ImageTabs from "@/components/web/heroSection/imageTabs";
+import Features from "@/components/web/home/features";
+import HeroSection from "@/components/web/home/heroSection";
+import ImageTabs from "@/components/web/home/imageTabs";
 import React from "react";
 
 const HomePage = () => {
