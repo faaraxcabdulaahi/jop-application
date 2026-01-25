@@ -58,12 +58,12 @@ const SignUp = () => {
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {error && (
-            <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
-              {error}
-            </div>
-          )}
           <CardContent className="space-y-4">
+            {error && (
+              <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
+                {error}
+              </div>
+            )}
             <div className="space-y-2">
               <Label htmlFor="name" className="text-gray-700">
                 Name
@@ -110,7 +110,7 @@ const SignUp = () => {
               className="w-full bg-primary hover:bg-primary/90"
               disabled={loading}
             >
-              {loading ? "Create account...":"Sign Up"}
+              {loading ? "Create account..." : "Sign Up"}
             </Button>
             <p className="text-center text-sm text-gray-600">
               Already have an account ?{" "}
