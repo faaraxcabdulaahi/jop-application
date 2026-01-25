@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
+import { signIn, signOut, signUp, useSession } from "@/lib/auth/authClient";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -20,18 +21,17 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async(e:React.FormEvent) => {
-      e.preventDefault();
-      setName("");
-      setLoading(true);
-      try {
-        
-      } catch (error) {
-        console.error("Unexpected ocurred in app", error)
-      }finally{
-        setLoading(false);
-      }
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setName("");
+    setLoading(true);
+    try {
+    } catch (error) {
+      console.error("Unexpected ocurred in app", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
       <Card className="w-full max-w-md border-gray-200 shadow-lg">
@@ -81,7 +81,7 @@ const SignUp = () => {
                 minLength={8}
                 className="border-gray-300 focus:border-primary focus:ring-primary"
                 value={password}
-                onChange={(event)=>setPassword(event.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
               />
             </div>
           </CardContent>
