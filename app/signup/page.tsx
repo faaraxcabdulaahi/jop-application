@@ -19,6 +19,19 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async(e:React.FormEvent) => {
+      e.preventDefault();
+      setName("");
+      setLoading(true);
+      try {
+        
+      } catch (error) {
+        console.error("Unexpected ocurred in app", error)
+      }finally{
+        setLoading(false);
+      }
+  }
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
       <Card className="w-full max-w-md border-gray-200 shadow-lg">
@@ -30,7 +43,7 @@ const SignUp = () => {
             Create an account to start tracking your jop application
           </CardDescription>
         </CardHeader>
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-gray-700">
