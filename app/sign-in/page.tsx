@@ -54,7 +54,7 @@ const SignIn = () => {
             Create an account to start tracking your jop application
           </CardDescription>
         </CardHeader>
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <CardContent className="space-y-4">
             {error && (
               <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
@@ -91,7 +91,7 @@ const SignIn = () => {
               className="w-full bg-primary hover:bg-primary/90"
               disabled={loading}
             >
-              {loading ? "signing ...in" : "sign in"};
+              {loading ? "signing ...in" : "sign in"}
             </Button>
             <p className="text-center text-sm text-gray-600">
               Don't have an account ?{" "}
