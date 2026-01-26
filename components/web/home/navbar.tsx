@@ -3,6 +3,9 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../../ui/button";
 import { getSession } from "@/lib/auth/auth";
+import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const Navbar = async () => {
   const session = await getSession();
@@ -26,6 +29,17 @@ const Navbar = async () => {
                   Dashboard
                 </Button>
               </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Button>
+                    <Avatar>
+                      <AvatarFallback>
+                        {session.user.name}
+                      </AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+              </DropdownMenu>
             </>
           ) : (
             <>
