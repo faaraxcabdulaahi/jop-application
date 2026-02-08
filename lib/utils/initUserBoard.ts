@@ -1,6 +1,5 @@
-import { models } from "mongoose";
 import connectDB from "../db/db";
-import { Board, Column, jopApplication } from "../models";
+import { Board, Column } from "../models"; // Removed jopApplication if not used
 
 const DEFAULT_COLUMNS = [
   {
@@ -27,23 +26,32 @@ const DEFAULT_COLUMNS = [
 
 export const initializedUserBoard = async (userId: string) => {
   try {
+    // Validate userId
+    if (!userId || typeof userId !== "string") {
+      throw new Error(`Invalid userId: ${userId}`);
+    }
+    
     await connectDB();
 
-    // Check if board already exists
+    // Check if board already exists - FIXED NAME
     const existingBoard = await Board.findOne({
       userId,
-      name: "Jop Hunt",
+      name: "Job Hunt",  // Fixed spelling
     });
+    
     if (existingBoard) {
+      console.log("Board already exists for user:", userId);
       return existingBoard;
     }
 
-    // Create the board
+    // Create the board - FIXED NAME
     const board = await Board.create({
-      name: "job Hunt",
-      userId,
+      name: "Job Hunt",  // Fixed spelling
+      userId: userId,
       columns: [],
     });
+
+    console.log("Created board for user:", userId, "Board ID:", board._id);
 
     // Create default columns
     const columns = await Promise.all(
@@ -52,15 +60,20 @@ export const initializedUserBoard = async (userId: string) => {
           name: col.name,
           order: col.order,
           boardId: board._id,
-          jopApplication: [],
-        }),
-      ),
+          jopApplications: [],  // Note: plural if it's an array
+        })
+      )
     );
 
     // Update the board with the new column IDs
-    board.columns = columns.map((col)=> col._id);
+    board.columns = columns.map((col) => col._id);
     await board.save();
+
+    console.log("Created columns for board:", board._id, "Columns:", columns.length);
+    
+    return board;
   } catch (error) {
+    console.error("Error initializing user board for userId:", userId, error);
     throw error;
   }
 };

@@ -85,4 +85,4 @@ const JopApplicationSchema = new Schema<IJopApplication>({
     timestamps:true,
 });
 
-export default mongoose.models.Board || mongoose.model<IJopApplication>("JopApplication", JopApplicationSchema)
+export default mongoose.models.JopApplication || mongoose.model<IJopApplication>("JopApplication", JopApplicationSchema)
