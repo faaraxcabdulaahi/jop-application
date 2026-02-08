@@ -11,4 +11,11 @@ interface JopApplication {
     columnId?:string;
     tags?:string[];
     description?:string;
+};
+
+interface Column {
+    _id:string;
+    name:string;
+    order:number;
+    jopApplications:JopApplication[];
 }
