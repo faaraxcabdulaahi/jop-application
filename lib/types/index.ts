@@ -1,4 +1,4 @@
-interface JopApplication {
+export interface JopApplication {
   _id: string;
   company: string;
   position: string;
@@ -13,7 +13,7 @@ interface JopApplication {
   description?: string;
 }
 
-interface Column {
+export interface Column {
   _id: string;
   name: string;
   order: number;
@@ -21,8 +21,9 @@ interface Column {
 }
 
 
-interface Board {
+export interface Board {
     _id:string;
     name:string;
     columns:Column[];
 }
+
